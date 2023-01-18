@@ -14,6 +14,24 @@ export class AppComponent {
 
   suggestUserName() {
     const suggestedName = 'Superuser';
+    /* this.signupForm.setValue({
+      userData: {
+        username: suggestedName,
+        email: ''
+      },
+      secret: 'pet',
+      questionAnswer:'',
+      gender: 'male'
+    }
+    ); */
+
+    /* What is in the top is nott the most convenient way, we can use the method below */
+    //We will override with patch the specific value we want
+    this.signupForm.form.patchValue({
+      userData: {
+        username: suggestedName
+      }
+    }); 
   }
 
   onSubmit() {
